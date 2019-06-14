@@ -1,0 +1,18 @@
+ssh-keygen -t rsa -b 4096 -C Ågdm196307@cc.seikei.ac.jpÅh
+
+
+vim ~/.ssh/config
+
+
+Host github.com
+User OginoHideki
+HostName ssh.github.com
+Port 443
+ProxyCommand connect.exe -H http://proxy.cc.seikei.ac.jp:8080 %h %p
+IdentityFile ~/.ssh/id_rsa
+
+
+git config --global http.proxy http://proxy.cc.seikei.ac.jp:8080
+
+
+ssh -T git@github.com
